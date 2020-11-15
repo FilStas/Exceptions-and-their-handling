@@ -21,18 +21,13 @@ public class ProductManager {
         return products;
     }
 
-    public void findById(int id) {
-        int length = products.length - 1;
-        Product[] tmp = new Product[length];
-        int index = 0;
+    public Product findById(int id) {
         for (Product product : products) {
             if (product.getId() == id) {
-                tmp[index] = product;
-
-                index++;
+                return product;
             }
         }
-        products = tmp;
+        return null;
     }
 
     public void removeById(int id) {
@@ -41,7 +36,7 @@ public class ProductManager {
         int index = 0;
         for (Product product : products) {
             if (findById(id) == null) {
-                throw new NotFoundException  ("Element with id: " + id + " not found" );
+                throw new NotFoundException  ("Element with id: " + id + " not found");
             }
             if (product.getId() != id) {
                 tmp[index] = product;
