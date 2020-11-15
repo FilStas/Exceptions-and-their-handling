@@ -1,5 +1,7 @@
 package ru.netology.domain;
 
+import java.io.UncheckedIOException;
+
 public class Product {
     private int id;
     private String name;
@@ -37,4 +39,5 @@ public class Product {
 
     public Product() {
     }
+
 }

@@ -3,9 +3,11 @@ package ru.netology.repository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Product;
+import ru.netology.exceptions.NotFoundException;
 import ru.netology.manager.ProductManager;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ProductRepositoryTest {
     ProductManager manager = new ProductManager();
@@ -42,6 +44,8 @@ class ProductRepositoryTest {
         Product[] actual = manager.findAll();
         Product[] expected = new Product[]{first, second, third};
 
+
         assertArrayEquals(actual, expected);
+
     }
 }
